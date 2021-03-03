@@ -1,0 +1,16 @@
+2021-03-03 13:53:32,821:services.logging:WARNING:user: 4 post: - update post action failed with error: 'Query' object has no attribute 'fisrt'
+2021-03-03 13:58:42,427:services.logging:WARNING:user: 4 post: - update post action failed with error: 'Query' object has no attribute 'fisrt'
+2021-03-03 14:46:31,967:services.logging:WARNING:post: - get posts action failed with error: Error creating backref 'posts' on relationship 'Comment.author': property of that name exists on mapper 'mapped class User->users'
+2021-03-03 14:46:39,145:services.logging:WARNING:post: - get posts action failed with error: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Comment->comments'. Original exception was: Error creating backref 'posts' on relationship 'Comment.author': property of that name exists on mapper 'mapped class User->users'
+2021-03-03 14:49:51,220:services.logging:WARNING:post: - get posts action failed with error: (sqlite3.OperationalError) no such table: posts
+[SQL: SELECT posts.id AS posts_id, posts.title AS posts_title, posts.content AS posts_content, posts.author_id AS posts_author_id, posts.publication_datetime AS posts_publication_datetime 
+FROM posts]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2021-03-03 15:00:37,280:services.logging:WARNING:user: 4 post: 1 comment: - delete comment action failed with error: No comment with this id
+2021-03-03 15:02:00,621:services.logging:WARNING:user: 5 post: 1 comment: - update comment action failed with error: No comment with this id
+2021-03-03 15:02:29,139:services.logging:WARNING:user: 5 post: 1 comment: - delete comment action failed with error: No comment with this id
+2021-03-03 15:02:49,461:services.logging:WARNING:user: 5 post: - update post action failed with error: No post with this id
+2021-03-03 15:02:57,464:services.logging:WARNING:user: 5 post: - delete post action failed with error: No post with this id
+2021-03-03 15:20:03,307:services.logging:WARNING:user: 5 post: - delete post action failed with error: No post with this id
+2021-03-03 15:21:10,191:services.logging:WARNING:user: 5 post: 1 comment: - update comment action failed with error: No comment with this id
+2021-03-03 15:21:22,657:services.logging:WARNING:user: 5 post: 1 comment: - delete comment action failed with error: No comment with this id
