@@ -32,6 +32,6 @@ def _check_auth(username, password):
 
 
 def get_user():
-    auth = request.authorization
-    user = User.get(auth)
+    auth: object = request.authorization
+    user: object = User.get(auth)
     return user

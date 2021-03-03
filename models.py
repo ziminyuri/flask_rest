@@ -18,9 +18,9 @@ class User(Base):
 
     def __init__(self, **kwargs):
         try:
-            self.email = kwargs.get('email')
-            self.username = kwargs.get('username')
-            self.password = generate_password_hash(kwargs.get('password'))
+            self.email: str = kwargs.get('email')
+            self.username: str = kwargs.get('username')
+            self.password: str = generate_password_hash(kwargs.get('password'))
         except Exception:
             session.rollback()
             raise
@@ -31,7 +31,7 @@ class User(Base):
     @classmethod
     def get(cls, user):
         try:
-            user = cls.query.filter_by(username=user.username).first()
+            user: object = cls.query.filter_by(username=user.username).first()
 
             if not user:
                 raise
@@ -55,10 +55,10 @@ class Post(Base):
 
     def __init__(self, author_id, **kwargs):
         try:
-            self.title = kwargs.get('title')
-            self.content = kwargs.get('content')
-            self.author_id = author_id
-            self.publication_datetime = kwargs.get('publication_datetime', datetime.datetime.now())
+            self.title: str = kwargs.get('title')
+            self.content: str = kwargs.get('content')
+            self.author_id: int = author_id
+            self.publication_datetime: datetime = kwargs.get('publication_datetime', datetime.datetime.now())
 
         except Exception as e:
             session.rollback()
@@ -67,7 +67,7 @@ class Post(Base):
     @classmethod
     def get_posts(cls):
         try:
-            posts = cls.query.all()
+            posts: list = cls.query.all()
             session.commit()
         except Exception:
             session.rollback()
@@ -83,9 +83,9 @@ class Post(Base):
             raise
 
     @classmethod
-    def get(cls, post_id, user):
+    def get(cls, post_id: int, user: object):
         try:
-            post = cls.query.filter(cls.id == post_id, cls.author_id == user.username).first()
+            post: object = cls.query.filter(cls.id == post_id, cls.author_id == user.username).first()
 
             if not post:
                 raise Exception ('No post with this id')

@@ -12,8 +12,8 @@ from services.auth import get_user, login_required
 @marshal_with(UserSchema)
 def registration():
     try:
-        body = request.json
-        new_user = User(**body)
+        body: dict = request.json
+        new_user: object = User(**body)
         session.add(new_user)
         session.commit()
     except Exception as e:
@@ -29,7 +29,7 @@ def registration():
 @marshal_with(UserSchema(many=True))
 def get_users():
     try:
-        users = User.query.all()
+        users: list = User.query.all()
     except Exception as e:
         return {'message': str(e)}, 400
     return users
@@ -39,7 +39,7 @@ def get_users():
 @marshal_with(PostSchema(many=True))
 def get_posts():
     try:
-        posts = Post.get_posts()
+        posts: list = Post.get_posts()
     except Exception as e:
         logger.warning(
             f'post: - get posts action failed with error: {e}'
@@ -71,8 +71,8 @@ def add_post(**kwargs):
 @marshal_with(PostSchema)
 def update_post(post_id, **kwargs):
     try:
-        user = get_user()
-        post = Post.get(post_id, user)
+        user: object = get_user()
+        post: object = Post.get(post_id, user)
         post.update(**kwargs)
     except Exception as e:
         logger.warning(
@@ -88,8 +88,8 @@ def update_post(post_id, **kwargs):
 @marshal_with(PostSchema)
 def delete_post(post_id):
     try:
-        user = get_user()
-        post = Post.get(post_id, user)
+        user: object = get_user()
+        post: object = Post.get(post_id, user)
         post.delete()
 
     except Exception as e:
