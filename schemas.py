@@ -5,6 +5,7 @@ class UserSchema(Schema):
     email = fields.String(required=True, validate=[validate.Length(max=50)])
     username = fields.String(required=True, validate=[validate.Length(max=50)])
     password = fields.String(required=True, load_only=True, validate=[validate.Length(max=50)])
+    message = fields.String(dump_only=True)
 
 
 class PostSchema(Schema):

@@ -39,3 +39,11 @@ FROM posts]
 2021-03-04 11:00:18,170:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
 2021-03-04 11:00:19,283:services.logging:WARNING:user: 4 post: 6 comment: - delete comment action failed with error: No comment with this id
 2021-03-04 11:00:19,702:services.logging:WARNING:user: 4 post: 6 comment: - update comment action failed with error: No comment with this id
+2021-03-04 11:10:30,798:services.logging:WARNING:users: - add user action failed with error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (email, username, password) VALUES (?, ?, ?)]
+[parameters: ('4@mail.ru', '4', 'pbkdf2:sha256:150000$GIel3j0e$4244b03b67bf491bac3d97a6f35b32fb2a32cb664e6005b30b99ed4324a38aac')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2021-03-04 11:14:33,613:services.logging:WARNING:users: - add user action failed with error: User with this username is already exist
+2021-03-04 11:14:34,639:services.logging:WARNING:users: - add user action failed with error: User with this username is already exist
+2021-03-04 11:15:28,550:services.logging:WARNING:users: - add user action failed with error: User with this username is already exist
+2021-03-04 11:15:56,055:services.logging:WARNING:users: - add user action failed with error: User with this username is already exist

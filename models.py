@@ -18,9 +18,15 @@ class User(Base):
 
     def __init__(self, **kwargs):
         try:
+            user: object = User.query.filter_by(username=kwargs.get('username')).first()
+
+            if user:
+                raise Exception ('User with this username is already exist')
+
             self.email: str = kwargs.get('email')
             self.username: str = kwargs.get('username')
             self.password: str = generate_password_hash(kwargs.get('password'))
+
         except Exception:
             session.rollback()
             raise
