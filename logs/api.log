@@ -14,3 +14,28 @@ FROM posts]
 2021-03-03 15:20:03,307:services.logging:WARNING:user: 5 post: - delete post action failed with error: No post with this id
 2021-03-03 15:21:10,191:services.logging:WARNING:user: 5 post: 1 comment: - update comment action failed with error: No comment with this id
 2021-03-03 15:21:22,657:services.logging:WARNING:user: 5 post: 1 comment: - delete comment action failed with error: No comment with this id
+2021-03-04 09:30:24,592:services.logging:WARNING:users: - add user action failed with error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (email, username, password) VALUES (?, ?, ?)]
+[parameters: ('13@mail.ru', '13', 'pbkdf2:sha256:150000$fM4pFTF3$72f5973c4092e0ce597c916ea94f458606a759313f3258327280989263818c0f')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2021-03-04 09:30:41,617:services.logging:WARNING:users: - add user action failed with error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (email, username, password) VALUES (?, ?, ?)]
+[parameters: ('13@mail.ru', '13', 'pbkdf2:sha256:150000$UEHWzA9Q$b66b4f2609bf50df22fbe1eeafb8091c943cc044a1c6ad9849600dca5aed0a4e')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2021-03-04 09:39:52,833:services.logging:WARNING:users: - add user action failed with error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (email, username, password) VALUES (?, ?, ?)]
+[parameters: ('14@mail.ru', '14', 'pbkdf2:sha256:150000$ZvrolQOE$58ab8aa90163b8f294598f7d846405694605c2bc7ba15854ad9f72f0999b4427')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2021-03-04 10:04:20,848:services.logging:WARNING:user: 5 post: - update post action failed with error: No post with this id
+2021-03-04 10:07:52,036:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:12:28,196:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:13:54,398:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:14:45,149:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:15:24,848:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:47:18,398:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:51:34,258:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:54:47,142:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 10:54:48,252:services.logging:WARNING:user: 4 post: 6 comment: - delete comment action failed with error: No comment with this id
+2021-03-04 11:00:18,170:services.logging:WARNING:user: 4 post: - update post action failed with error: No post with this id
+2021-03-04 11:00:19,283:services.logging:WARNING:user: 4 post: 6 comment: - delete comment action failed with error: No comment with this id
+2021-03-04 11:00:19,702:services.logging:WARNING:user: 4 post: 6 comment: - update comment action failed with error: No comment with this id
